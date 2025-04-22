@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Aashutosh Pratap Singh's Portfolio - Computer Engineering Student">
+    <meta name="keywords" content="portfolio, web development, computer engineering">
+    <meta name="author" content="Aashutosh Pratap Singh">
+    <link rel="shortcut icon" type="x-icon" href="apg.jpg">
+    <title>Aashutosh Pratap Singh - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Intro Animation -->
+    <!-- HTML: Displays a hacking-themed loading screen -->
+    <div id="intro">Initializing Portfolio...</div>
+    <!-- CSS: Styles for the intro animation -->
+    <style>
+        #intro {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: #00ff00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            font-size: 2rem;
+            animation: fadeOut 4s forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+    </style>
+
+    <!-- Binary Background Animation -->
+    <!-- HTML: Container for animated binary streams -->
+    <div id="binary-background"></div>
+    <!-- CSS: Styles for the binary stream background -->
+    <style>
+        #binary-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .binary-stream {
+            position: absolute;
+            top: -100%;
+            font-size: 20px;
+            color: rgba(0, 255, 0, 0.2);
+            animation: moveBinary 10s linear infinite;
+        }
+        @keyframes moveBinary {
+            0% { top: -100%; }
+            100% { top: 100%; }
+        }
+    </style>
+
+    <!-- Header Section -->
+    <!-- HTML: Navigation bar with logo and menu links -->
+    <header>
+        <div class="logo-container">
+            <img src="apg.jpg" alt="Profile Logo" class="profile-logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- CSS: Styles for the header and navigation -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto Mono', monospace;
+        }
+        body {
+            background: linear-gradient(135deg, #000, #001f00);
+            color: #00ff00;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 100px;
+            background-color: rgba(0, 0, 0, 0.9);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            z-index: 10;
+        }
+        .logo-container {
+            width: 50px;
+            height: 50px;
+        }
+        .profile-logo {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #00ff00;
+            font-size: 18px;
+            padding: 10px 20px;
+            transition: color 0.3s, background-color 0.3s;
+        }
+        nav ul li a:hover {
+            color: black;
+            background-color: #00ff00;
+            border-radius: 5px;
+        }
+    </style>
+
+    <!-- Hero Section -->
+    <!-- HTML: Introduction with name, title, and call-to-action -->
+    <section id="hero">
+        <h1>Aashutosh Pratap Singh</h1>
+        <p>Computer Engineering Student</p>
+        <a href="#contact">Get in Touch</a>
+    </section>
+    <!-- CSS: Styles for the hero section -->
+    <style>
+        #hero {
+            text-align: center;
+            padding-top: 150px;
+            padding-bottom: 100px;
+        }
+        #hero h1 {
+            font-size: 60px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.7);
+            animation: fadeInUp 1s ease-in-out;
+        }
+        #hero p {
+            font-size: 24px;
+            margin-top: 20px;
+            text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        #hero a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #00ff00;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        #hero a:hover {
+            background-color: #88d3ce;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+
+    <!-- About Section -->
+    <!-- HTML: Information about the portfolio owner -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Welcome to my hacking-themed portfolio! I am a passionate computer science student with a strong focus on coding. 
+            I specialize in creating interactive and dynamic websites, incorporating innovative designs and modern technologies.
+        </p>
+    </section>
+    <!-- CSS: Styles for the about section -->
+    <style>
+        #about {
+            width: 80%;
+            margin: 100px auto;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            transition: transform 0.8s ease-in-out;
+        }
+        #about:hover {
+            transform: scale(1.02);
+        }
+        #about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+        #about p {
+            font-size: 20px;
+            color: #c0c0c0;
+        }
+    </style>
+
+    <!-- Skills Section -->
+    <!-- HTML: List of skills -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Communication</li>
+            <li>UI/UX Design</li>
+            <li>Web Development</li>
+            <li>Problem Solving</li>
+        </ul>
+    </section>
+    <!-- CSS: Styles for the skills section -->
+    <style>
+        #skills {
+            width: 80%;
+            margin: 50px auto;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+        #skills ul {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        #skills ul li {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #00ff00;
+            transition: transform 0.5s;
+        }
+        #skills ul li:hover {
+            transform: scale(1.2);
+        }
+    </style>
+
+    <!-- Contact Section -->
+    <!-- HTML: Contact form for user inquiries -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <form class="contact-form" action="https://formspree.io/f/mayrgrpl" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <!-- CSS: Styles for the contact section -->
+    <style>
+        #contact {
+            width: 80%;
+            margin: 100px auto;
+            text-align: center;
+        }
+        #contact h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #00ff00;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+        }
+        #contact input,
+        #contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #00ff00;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #00ff00;
+        }
+        #contact button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #00ff00;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        #contact button:hover {
+            background-color: #88d3ce;
+        }
+    </style>
+
+    <!-- Footer Section -->
+    <!-- HTML: Social media links and copyright -->
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com/profile.php?id=100016440818653&mibextid=ZbWKwL" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com/aashutosh_singh88?igsh=eXRzenZ2bHRycW1q" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://snapchat.com/add/aashutosh_s8838?share_id=56g_5xW3_UU&locale=en-GB" target="_blank"><i class="fa-brands fa-snapchat"></i></a>
+            <a href="https://LinkedIn.com/in/aashutosh-pratap-singh-00797b23a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <p>© 2024 Aashutosh Pratap Singh. All rights reserved.</p>
+    </footer>
+    <!-- CSS: Styles for the footer -->
+    <style>
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.9);
+            margin-top: 50px;
+        }
+        footer p {
+            color: #00ff00;
+        }
+        .social-links a {
+            margin: 0 10px;
+            color: #149414;
+            font-size: 24px;
+            text-decoration: none;
+        }
+    </style>
+
+    <!-- Background Music and Toggle Button -->
+    <!-- HTML: Audio element and mute/play button -->
+    <audio id="bg-music" loop>
+        <source src="new.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="sound-toggle">
+        <span class="icon">🔊</span> Mute Sound
+    </button>
+    <!-- CSS: Styles for the sound toggle button -->
+    <style>
+        #sound-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(0, 255, 0, 0.8);
+            color: black;
+            border: none;
+            padding: 12px 18px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 25px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: none;
+            align-items: center;
+            gap: 8px;
+        }
+        #sound-toggle:hover {
+            background: #14a414;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+        }
+        #sound-toggle:active {
+            transform: scale(0.95);
+        }
+    </style>
+
+    <!-- JavaScript: Controls binary stream animation and background music -->
+    <script>
+        // Binary Stream Animation
+        function generateBinaryStream() {
+            const binaryContainer = document.getElementById('binary-background');
+            const binaryStream = document.createElement('div');
+            binaryStream.classList.add('binary-stream');
+            binaryStream.style.left = `${Math.random() * 100}%`;
+            binaryStream.innerHTML = '0 1 '.repeat(20);
+            binaryContainer.appendChild(binaryStream);
+            setTimeout(() => binaryStream.remove(), 10000);
+        }
+
+        // Intro Animation
+        setTimeout(() => {
+            document.getElementById('intro').style.display = 'none';
+        }, 4000);
+
+        // Initialize Binary Streams
+        window.onload = () => {
+            const isMobile = window.innerWidth <= 768;
+            const streamCount = isMobile ? 5 : 10;
+            for (let i = 0; i < streamCount; i++) {
+                generateBinaryStream();
+            }
+            setInterval(generateBinaryStream, isMobile ? 1500 : 1000);
+        };
+
+        // Background Music Control
+        document.addEventListener("DOMContentLoaded", async () => {
+            const audio = document.getElementById("bg-music");
+            const toggleButton = document.getElementById("sound-toggle");
+            const icon = toggleButton.querySelector(".icon");
+            let isPlaying = false;
+
+            try {
+                await audio.play();
+                isPlaying = true;
+            } catch (err) {
+                console.log("Autoplay blocked, waiting for user interaction...");
+                toggleButton.style.display = "block";
+            }
+
+            toggleButton.addEventListener("click", () => {
+                if (isPlaying) {
+                    audio.pause();
+                    icon.textContent = "🔊";
+                    toggleButton.textContent = " Play Sound";
+                } else {
+                    audio.play();
+                    icon.textContent = "🔇";
+                    toggleButton.textContent = " Mute Sound";
+                }
+                toggleButton.prepend(icon);
+                isPlaying = !isPlaying;
+            });
+        });
+    </script>
+
+    <!-- Responsive Design -->
+    <!-- CSS: Media queries for mobile and tablet devices -->
+    <style>
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 20px;
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            #hero {
+                padding-top: 120px;
+            }
+            #hero h1 {
+                font-size: 36px;
+            }
+            #hero p {
+                font-size: 18px;
+            }
+            #about, #skills, #contact {
+                width: 90%;
+                margin: 50px auto;
+                padding: 30px;
+            }
+            #contact input, #contact textarea {
+                width: 100%;
+            }
+            footer {
+                padding: 10px;
+            }
+            footer p {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            #hero h1 {
+                font-size: 28px;
+            }
+            #hero p {
+                font-size: 16px;
+            }
+            #about h2, #skills h2, #contact h2 {
+                font-size: 24px;
+            }
+            #about p, #skills ul li, #contact p {
+                font-size: 14px;
+            }
+            #skills ul li {
+                padding: 10px 20px;
+            }
+            .social-links a {
+                font-size: 20px;
+            }
+        }
+    </style>
+</body>
+</html>
